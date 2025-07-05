@@ -9,8 +9,8 @@ const Experience = ({ darkMode }) => {
       year: "2023 - Present",
       position: "Frontend Developer",
       company: "GlintHawk technology.",
-      description:
-        " developing complex web applications using React and modern JavaScript.",
+      description: 
+        " Roles & Responsibilities - developing complex web applications using React and modern JavaScript.",
     },
     {
       year: "2021 - 2023",
