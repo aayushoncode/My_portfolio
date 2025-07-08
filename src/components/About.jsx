@@ -132,7 +132,7 @@ const About = ({ darkMode }) => {
                   : "bg-indigo-500 text-white"
               }`}>
               <a
-                href="https://drive.google.com/file/d/1ewnc_nPpeJSn8Jtw9gikOoQE4y_Ak1-1/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1JDJVd6NbbS1u9fRTTWFgFCFWL6Zot7Je/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer">
                 Download Resume
