@@ -8,9 +8,9 @@ const About = ({ darkMode }) => {
   return (
     <section
       id="about"
-      className={`py-12 md:py-20 px-4 sm:px-6 ${
+      className={`w-full overflow-x-hidden py-12 md:py-20 px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[100vw] ${
         darkMode ? "bg-gray-800" : "bg-white"
-      }`}>
+      }`}   >
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -39,7 +39,7 @@ const About = ({ darkMode }) => {
                 <img
                   src={img}
                   alt="coding"
-                  className="absolute -top-2 h-110 "
+                  className="absolute -top-2 lg:h-110  h-80"
                 />
               </div>
             </div>

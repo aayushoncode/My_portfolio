@@ -1,8 +1,17 @@
+/** @format */
+
 import { motion } from "framer-motion";
 import { useState } from "react";
-import React from 'react';
+import React from "react";
 
-const Navbar = ({ darkMode, toggleDarkMode, activeSection, scrollToSection, mobileMenuOpen, setMobileMenuOpen }) => {
+const Navbar = ({
+  darkMode,
+  toggleDarkMode,
+  activeSection,
+  scrollToSection,
+  mobileMenuOpen,
+  setMobileMenuOpen,
+}) => {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-500 ${
@@ -19,14 +28,14 @@ const Navbar = ({ darkMode, toggleDarkMode, activeSection, scrollToSection, mobi
         </motion.div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-6 lg:space-x-8">
+        <div className="hidden md:flex space-x-4 lg:space-x-6">
           {["home", "about", "projects", "experience", "contact"].map(
             (item) => (
               <motion.button
                 key={item}
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className={`capitalize px-3 py-1 rounded-full transition-all ${
+                className={`capitalize px-3 py-1 rounded-full transition-all text-sm lg:text-base ${
                   activeSection === item
                     ? darkMode
                       ? "bg-indigo-600 text-white"
@@ -43,7 +52,7 @@ const Navbar = ({ darkMode, toggleDarkMode, activeSection, scrollToSection, mobi
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center space-x-4">
+        <div className="md:hidden flex items-center space-x-3">
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -161,10 +170,8 @@ const Navbar = ({ darkMode, toggleDarkMode, activeSection, scrollToSection, mobi
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className={`px-4 py-2 md:px-6 md:py-2 rounded-full font-medium ${
-              darkMode
-                ? "bg-indigo-600 text-white"
-                : "bg-indigo-500 text-white"
+            className={`px-4 py-2 rounded-full font-medium text-sm lg:text-base ${
+              darkMode ? "bg-indigo-600 text-white" : "bg-indigo-500 text-white"
             }`}>
             Hire Me
           </motion.button>
@@ -173,13 +180,17 @@ const Navbar = ({ darkMode, toggleDarkMode, activeSection, scrollToSection, mobi
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden mobile-menu-container absolute top-16 left-0 right-0 bg-white dark:bg-gray-800 shadow-lg py-4 px-6">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="md:hidden w-full bg-white dark:bg-gray-800 shadow-lg py-2 px-4"
+          style={{ position: "fixed", top: "64px", left: 0, zIndex: 40 }}>
           {["home", "about", "projects", "experience", "contact"].map(
             (item) => (
               <motion.button
                 key={item}
                 whileTap={{ scale: 0.95 }}
-                className={`block w-full text-left capitalize px-4 py-3 rounded-full mb-2 ${
+                className={`block w-full text-left capitalize px-4 py-3 rounded-full mb-1 ${
                   activeSection === item
                     ? darkMode
                       ? "bg-indigo-600 text-white"
@@ -188,21 +199,22 @@ const Navbar = ({ darkMode, toggleDarkMode, activeSection, scrollToSection, mobi
                     ? "text-gray-300 hover:text-white"
                     : "text-gray-600 hover:text-indigo-600"
                 }`}
-                onClick={() => scrollToSection(item)}>
+                onClick={() => {
+                  scrollToSection(item);
+                  setMobileMenuOpen(false);
+                }}>
                 {item.replace(/-/g, " ")}
               </motion.button>
             )
           )}
           <motion.button
             whileTap={{ scale: 0.95 }}
-            className={`w-full mt-4 px-4 py-3 rounded-full font-medium ${
-              darkMode
-                ? "bg-indigo-600 text-white"
-                : "bg-indigo-500 text-white"
+            className={`w-full mt-2 px-4 py-3 rounded-full font-medium ${
+              darkMode ? "bg-indigo-600 text-white" : "bg-indigo-500 text-white"
             }`}>
             Hire Me
           </motion.button>
-        </div>
+        </motion.div>
       )}
     </nav>
   );

@@ -9,13 +9,13 @@ const Experience = ({ darkMode }) => {
       year: "2023 - Present",
       position: "Frontend Developer",
       company: "GlintHawk technology.",
-      description: 
+      description:
         " Roles & Responsibilities - developing complex web applications using React and modern JavaScript.",
     },
     {
       year: "2021 - 2023",
-      position: "Frontend intern",
-      company: "Creative Solutions Ltd.",
+      position: "junior Frontend intern",
+      company: "Mern academy",
       description:
         "Created responsive user interfaces and collaborated with UX designers to implement pixel-perfect designs.",
     },
@@ -23,10 +23,10 @@ const Experience = ({ darkMode }) => {
 
   return (
     <section
-      id="experience"
-      className={`py-12 md:py-20 px-4 sm:px-6 ${
-        darkMode ? "bg-gray-800" : "bg-white"
-      }`}>
+        id="experience"
+  className={`w-full overflow-x-hidden py-12 md:py-20 px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[100vw] ${
+    darkMode ? "bg-gray-800" : "bg-white"
+  }`}>
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -53,7 +53,7 @@ const Experience = ({ darkMode }) => {
                 key={index}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{  margin: "-100px" }}
+                viewport={{ margin: "-100px" }}
                 className="relative pl-10 sm:pl-16 pb-8 sm:pb-12">
                 <div
                   className={`absolute left-0 top-1 w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center ${

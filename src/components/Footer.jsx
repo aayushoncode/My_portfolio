@@ -4,10 +4,8 @@ import React from 'react';
 const Footer = ({ darkMode }) => {
   return (
     <footer
-      className={`py-8 sm:py-12 ${
-        darkMode ? "bg-gray-900" : "bg-gray-800"
-      } text-gray-300`}>
-      <div className="container mx-auto px-4 sm:px-6 text-center">
+      className={`w-full overflow-x-hidden ${darkMode ? "bg-gray-900" : "bg-gray-800"}`}>
+      <div className="w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-10 py-8 sm:py-12">
         <div className="mb-6 sm:mb-8">
           <div className="text-xl sm:text-2xl font-bold inline-block">
             <span className="text-indigo-400">Ayush</span>Portfolio

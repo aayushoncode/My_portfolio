@@ -50,7 +50,11 @@ const Contact = ({ darkMode }) => {
   ];
 
   return (
-    <section id="contact" className="py-12 md:py-20 px-4 sm:px-6">
+    <section
+      id="contact"
+      className={`w-full overflow-x-hidden py-12 md:py-20 px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[100vw] ${
+        darkMode ? "bg-gray-800" : "bg-white"
+      }`}>
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -75,7 +79,7 @@ const Contact = ({ darkMode }) => {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{  margin: "-100px" }}>
+            viewport={{ margin: "-100px" }}>
             <h3 className="text-xl sm:text-2xl font-bold mb-4 md:mb-6">
               Contact Information
             </h3>
@@ -211,7 +215,7 @@ const Contact = ({ darkMode }) => {
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{margin: "-100px" }}
+            viewport={{ margin: "-100px" }}
             className="mt-8 md:mt-0">
             <h3 className="text-xl sm:text-2xl font-bold mb-4 md:mb-6">
               Send a Message

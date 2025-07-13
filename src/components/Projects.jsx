@@ -79,7 +79,10 @@ const Projects = ({ darkMode }) => {
   ];
 
   return (
-    <section id="projects" className="py-12 md:py-20 px-4 sm:px-6">
+    <section  id="projects"
+  className={`w-full overflow-x-hidden py-12 md:py-20 px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[100vw] ${
+    darkMode ? "bg-gray-800" : "bg-white"
+  }`}>
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -138,7 +141,7 @@ const Projects = ({ darkMode }) => {
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className={`text-xs lg:px-2 py-1 rounded-full ${
+                      className={`text-xs lg:px-2 px-3 py-1 rounded-full ${
                         darkMode
                           ? "bg-gray-700 text-indigo-300"
                           : "bg-indigo-100 text-indigo-700"
