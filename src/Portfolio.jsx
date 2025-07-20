@@ -66,7 +66,7 @@ const Portfolio = () => {
   }, []);
 
   // Scroll to section function
-  const scrollToSection = (sectionId) => {
+  const scrollToSection =(sectionId) => {
     const refs = {
       home: homeRef,
       about: aboutRef,
