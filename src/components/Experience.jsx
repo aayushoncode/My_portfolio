@@ -25,7 +25,7 @@ const Experience = ({ darkMode }) => {
     <section
         id="experience"
   className={`w-full overflow-x-hidden py-12 md:py-20 px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[100vw] ${
-    darkMode ? "bg-gray-800" : "bg-white"
+    darkMode ? "bg-gray-800" : "bg-indigo-50"
   }`}>
       <div className="container mx-auto">
         <motion.div
