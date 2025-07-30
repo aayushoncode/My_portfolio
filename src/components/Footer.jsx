@@ -2,15 +2,26 @@
 import { motion } from "framer-motion";
 
 import React from "react";
-import { FaDribbble, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Footer = ({ darkMode }) => {
   const footerLinks = ["Home", "About", "Projects", "Experience", "Contact"];
   const socialLinks = [
-    { name: "GitHub", icon: <FaGithub />, url: "#" },
-  { name: "LinkedIn", icon: <FaLinkedin />, url: "#" },
-  { name: "Twitter", icon: <FaTwitter />, url: "#" },
-  { name: "Dribbble", icon: <FaDribbble />, url: "#" }
+    {
+      name: "GitHub",
+      icon: <FaGithub />,
+      url: "https://github.com/aayushoncode",
+    },
+    {
+      name: "LinkedIn",
+      icon: <FaLinkedin />,
+      url: "https://www.linkedin.com/in/ayush-kumar-sinha-21b722347?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    },
+    {
+      name: "Twitter",
+      icon: <FaTwitter />,
+      url: "https://x.com/AYUSHsinha58617?t=kyKp0nyEwJjo0-k0F-6mNA&s=08",
+    },
   ];
 
   // Animation variants
@@ -18,12 +29,12 @@ const Footer = ({ darkMode }) => {
     hover: {
       y: -4,
       color: darkMode ? "#818CF8" : "#4F46E5",
-      transition: { type: "spring", stiffness: 400, damping: 10 }
+      transition: { type: "spring", stiffness: 400, damping: 10 },
     },
-    initial: { 
+    initial: {
       y: 0,
-      color: darkMode ? "#E5E7EB" : "#4B5563"
-    }
+      color: darkMode ? "#E5E7EB" : "#4B5563",
+    },
   };
 
   const socialVariants = {
@@ -31,21 +42,24 @@ const Footer = ({ darkMode }) => {
       y: -8,
       scale: 1.2,
       rotate: [0, 10, -10, 0],
-      transition: { type: "spring", stiffness: 500 }
+      transition: { type: "spring", stiffness: 500 },
     },
-    initial: { 
+    initial: {
       y: 0,
       scale: 1,
-      rotate: 0
-    }
+      rotate: 0,
+    },
   };
 
   return (
-    <footer className={`w-full overflow-hidden ${darkMode ? "bg-gray-900" : "bg-indigo-50"}`}>
+    <footer
+      className={`w-full overflow-hidden ${
+        darkMode ? "bg-gray-900" : "bg-indigo-50"
+      }`}>
       <div className="w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-10 py-12 sm:py-16">
         {/* Decorative elements */}
         <div className="relative">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -53,21 +67,22 @@ const Footer = ({ darkMode }) => {
               darkMode ? "bg-indigo-500" : "bg-indigo-300"
             }`}
           />
-          
+
           {/* Main content */}
           <div className="relative z-10">
             {/* Logo/Branding */}
-            <motion.div 
+            <motion.div
               whileHover={{ scale: 1.02 }}
-              className="mb-8 sm:mb-12 inline-block"
-            >
-              <span className={`text-2xl sm:text-3xl font-bold ${darkMode ? "text-white" : "text-gray-900"}`}>
+              className="mb-8 sm:mb-12 inline-block">
+              <span
+                className={`text-2xl sm:text-3xl font-bold ${
+                  darkMode ? "text-white" : "text-gray-900"
+                }`}>
                 <span className="text-indigo-600">Ayush</span>
-                <motion.span 
-                  animate={{ opacity: [0.8, 1, 0.8] }} 
+                <motion.span
+                  animate={{ opacity: [0.8, 1, 0.8] }}
                   transition={{ duration: 2, repeat: Infinity }}
-                  className="mx-1"
-                >
+                  className="mx-1">
                   ✨
                 </motion.span>
                 Portfolio
@@ -83,11 +98,14 @@ const Footer = ({ darkMode }) => {
                   variants={linkVariants}
                   initial="initial"
                   whileHover="hover"
-                  className={`text-sm sm:text-base font-medium py-2 relative ${darkMode ? "text-gray-300" : "text-gray-600"}`}
-                >
+                  className={`text-sm sm:text-base font-medium py-2 relative ${
+                    darkMode ? "text-gray-300" : "text-gray-600"
+                  }`}>
                   {item}
                   <motion.span
-                    className={`absolute bottom-0 left-0 h-0.5 rounded-full ${darkMode ? "bg-indigo-500" : "bg-indigo-600"}`}
+                    className={`absolute bottom-0 left-0 h-0.5 rounded-full ${
+                      darkMode ? "bg-indigo-500" : "bg-indigo-600"
+                    }`}
                     initial={{ width: 0 }}
                     whileHover={{ width: "100%" }}
                     transition={{ duration: 0.3 }}
@@ -105,30 +123,37 @@ const Footer = ({ darkMode }) => {
                   variants={socialVariants}
                   initial="initial"
                   whileHover="hover"
-                  className={`text-xl sm:text-2xl p-3 rounded-full ${darkMode ? "bg-gray-800 text-indigo-400" : "bg-white text-indigo-600"} shadow-sm`}
-                  aria-label={social.name}
-                >
+                  className={`text-xl sm:text-2xl p-3 rounded-full ${
+                    darkMode
+                      ? "bg-gray-800 text-indigo-400"
+                      : "bg-white text-indigo-600"
+                  } shadow-sm`}
+                  aria-label={social.name}>
                   {social.icon}
                 </motion.a>
               ))}
             </div>
 
             {/* Divider */}
-            <motion.div 
+            <motion.div
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.8 }}
-              className={`h-px w-full mb-6 sm:mb-8 ${darkMode ? "bg-gray-700" : "bg-gray-200"}`}
+              className={`h-px w-full mb-6 sm:mb-8 ${
+                darkMode ? "bg-gray-700" : "bg-gray-200"
+              }`}
             />
 
             {/* Copyright */}
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className={`text-xs sm:text-sm text-center ${darkMode ? "text-gray-500" : "text-gray-400"}`}
-            >
-              © {new Date().getFullYear()} Crafted with ❤️ by Ayush. All rights reserved.
+              className={`text-xs sm:text-sm text-center ${
+                darkMode ? "text-gray-500" : "text-gray-400"
+              }`}>
+              © {new Date().getFullYear()} Crafted with ❤️ by Ayush. All rights
+              reserved.
             </motion.p>
           </div>
         </div>
